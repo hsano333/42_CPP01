@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     {
         cout << "invalid argument" << endl;
         cout << "valid argument is <filename> <s1> <s2>" << endl;
-        return (1);
+        return (EXIT_FAILURE);
     }
     filename = string(argv[1]);
     s1 = string(argv[2]);

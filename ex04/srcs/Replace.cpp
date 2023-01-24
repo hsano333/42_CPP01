@@ -12,7 +12,6 @@ Replace::Replace(string filename)
 
 Replace::~Replace()
 {
-    //_filename = filename;
 }
 
 bool Replace::open_file(fstream *infile, fstream *outfile)
@@ -36,53 +35,42 @@ bool Replace::open_file(fstream *infile, fstream *outfile)
     return (true);
 }
 
-
-
 int Replace::replace(string s1, string s2)
 {
     fstream infile;
     fstream outfile;
     size_t  s1_len = s1.length();
-    size_t  s2_len = s2.length();
+    //size_t  s2_len = s2.length();
     size_t  buf_len;
     size_t  old_pos = 0;
     size_t  pos = 0;
-    //int     read_size = 10;
-    //char    buf[read_size];
     string  buf;
 
     if (!open_file(&infile, &outfile))
-    {
-        cout << s1 << s2 << s1_len << s2_len << endl;
         return (EXIT_FAILURE);
-    }
-    cout << "success open_file" << endl;
     while (!infile.eof())
     {
         getline(infile, buf);
-        pos = 0;
-        old_pos = 0;
-        buf_len = buf.length();
-        while (pos < buf_len)
+        if (s1_len == 0)
+            outfile << buf;
+        else
         {
-            pos = buf.find(s1, pos);
-            cout << "s1=" << s1 << endl;
-            cout << "pos=" << pos << endl;
-            cout << "old_pos=" << old_pos << endl;
-            if (pos == string::npos)
+            pos = 0;
+            old_pos = 0;
+            buf_len = buf.length();
+            while (pos < buf_len)
             {
-                outfile << buf.substr(0, string::npos);
-                break;
-            }
-            //else if (pos > old_pos)
-            //else
-            {
+                pos = buf.find(s1, pos);
+                if (pos == string::npos)
+                {
+                    outfile << buf.substr(0, string::npos);
+                    break;
+                }
                 outfile << buf.substr(0, pos);
                 outfile << s2;
                 old_pos = pos;
                 pos += s1_len;
             }
-            //buf = buf.substr(pos, string::npos);
         }
         if (!infile.eof())
             outfile << endl;
@@ -91,4 +79,3 @@ int Replace::replace(string s1, string s2)
     outfile.close();
     return (EXIT_SUCCESS);
 }
-
