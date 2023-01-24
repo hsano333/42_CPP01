@@ -1,4 +1,4 @@
-NAME_	:=_Sed_is_for_losers
+NAME 	:= Unnecessary_violence
 LIB	:= ./lib/
 OBJDIR	:= ./obj
 SRCDIR	:= ./srcs/

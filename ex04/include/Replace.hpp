@@ -10,6 +10,7 @@ class Replace
     private:
         string  _filename;
         bool open_file(fstream *infile, fstream *outfile);
+        void    trans(string s1, string s2);
         //fstream _file;
     public:
         int replace(string s1, string s2);

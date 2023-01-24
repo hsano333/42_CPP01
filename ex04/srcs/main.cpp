@@ -12,6 +12,7 @@ int main(int argc, char **argv)
     string filename;
     string s1;
     string s2;
+
     if (argc != 4)
     {
         cout << "invalid argument" << endl;
