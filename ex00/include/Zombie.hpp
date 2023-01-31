@@ -6,12 +6,12 @@ using std::string;
 class Zombie
 {
 	private:
-		string _name;
+		string name;
     public:
         void announce(void);
-        static Zombie* newZombie(string name);
-        void randomChump(string name);
-        Zombie(string name);
+        static Zombie* newZombie(std::string name);
+        void randomChump(std::string name);
+        Zombie(std::string name);
         ~Zombie();
 };
 

@@ -2,11 +2,11 @@
 
 int main(void)
 {
-	Zombie zombie("static");
+	Zombie zombie("test static");
 	zombie.announce();
-	Zombie *dynamic = Zombie::newZombie("dynamic");
+	Zombie *dynamic = Zombie::newZombie("test dynamic");
 	dynamic->announce();
 	delete dynamic;
-	zombie.randomChump("random");
+	zombie.randomChump("test random");
 	return (0);
 }

@@ -4,30 +4,40 @@ using std::string;
 using std::endl;
 using std::cout;
 
-
 Harl::Harl()
 {
 }
 
 void Harl::debug(void)
 {
-    cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << endl;
+    cout << "[ DEBUG ]" << endl;
+    cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger." << endl;
+    cout << "I really do!" << endl;
+    cout << endl;
 }
 
 void Harl::info(void)
 {
-    cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << endl;
+    cout << "[ INFO ]" << endl;
+    cout << "I cannot believe adding extra bacon costs more money." << endl;
+    cout << "You didn’t put enough bacon in my burger!" << endl;
+    cout << "If you did, I wouldn’t be asking for more!" << endl;
+    cout << endl;
 }
 
 void Harl::warning(void)
 {
-    cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << endl;
-;
+    cout << "[ WARNING ]" << endl;
+    cout << "I think I deserve to have some extra bacon for free." << endl;
+    cout << "I’ve been coming for years whereas you started working here since last month." << endl;
+    cout << endl;
 }
 
 void Harl::error(void)
 {
+    cout << "[ ERROR ]" << endl;
     cout << "This is unacceptable! I want to speak to the manager now." << endl;
+    cout << endl;
 }
 
 HarlE Harl::getID(string level)
