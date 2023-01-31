@@ -6,11 +6,11 @@
 class HumanA
 {
     private:
-        Weapon* weapon;
+        Weapon& weapon;
         string name;
     public:
-        //HumanA(void);
         HumanA(string name, Weapon& weapon);
+        ~HumanA();
         void attack();
 };
 #endif

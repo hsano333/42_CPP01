@@ -9,6 +9,7 @@ class Weapon
         string type;
     public:
         Weapon();
+        ~Weapon();
         Weapon(string type);
         const string& getType(void);
         void setType(string type);

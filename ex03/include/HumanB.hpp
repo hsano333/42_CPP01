@@ -10,6 +10,7 @@ class HumanB
         string name;
     public:
         HumanB(string name);
+        ~HumanB();
         void setWeapon(Weapon &weapon);
         void attack();
 

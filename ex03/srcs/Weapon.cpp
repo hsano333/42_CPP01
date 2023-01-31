@@ -10,6 +10,10 @@ Weapon::Weapon(string type)
     this->type = type;
 }
 
+Weapon::~Weapon()
+{
+}
+
 const string& Weapon::getType(void)
 {
     return (this->type);

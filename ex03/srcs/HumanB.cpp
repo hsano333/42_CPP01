@@ -11,6 +11,9 @@ HumanB::HumanB(string name)
     //this->weapon = Weapon("");
     //this->weapon = &0;
 }
+HumanB::~HumanB()
+{
+}
 
 void HumanB::setWeapon(Weapon &weapon)
 {
