@@ -12,17 +12,13 @@ int main(void)
 
     for (int i=0; i<N;i++)
     {
-        std::cout << "announce i=" << i << std::endl;
+        std::cout << "address:" << &(zombies[i]) << " announce i=" << i << std::endl;
         zombies[i].announce();
     }
 
-    //for (int i=0; i<N;i++)
-    //{
 	std::cout << "destroy " << std::endl;
-    //delete (zombies[0]);
 	std::cout << "end main" << std::endl;
-    printf("zombies=%p\n", zombies);
     delete [] zombies;
-    //}
+    //system("leaks Moar_brainz!");
 	return (0);
 }

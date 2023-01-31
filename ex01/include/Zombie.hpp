@@ -6,7 +6,7 @@ using std::string;
 class Zombie
 {
 	private:
-		string _name;
+		string name;
     public:
         void announce(void);
         void set_name(string name);

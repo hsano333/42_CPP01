@@ -4,14 +4,11 @@
 
 Zombie* Zombie::zombieHorde(int N, std::string name)
 {
-    //Zombie* zombies;
     Zombie* zombies = new Zombie[N];
-    printf("zombies=%p\n", zombies);
-    std::cout << "Horde N=" << N << std::endl;
+    //std::cout << "allocated address:" << &(zombies[0]) << std::endl;
     for (int i = 0; i < N; i++)
     {
         zombies[i].set_name(name);
     }
-    printf("zombies=%p\n", zombies);
     return (zombies);
 }
