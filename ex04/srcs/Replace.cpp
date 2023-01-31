@@ -64,7 +64,6 @@ int Replace::replace(string s1, string s2)
                 if (pos == string::npos)
                 {
                     outfile << buf.substr(old_pos, string::npos);
-                    cout << "break;" << endl;
                     break;
                 }
                 outfile << buf.substr(old_pos, pos - old_pos);
