@@ -21,7 +21,7 @@ bool Replace::open_file(fstream *infile, fstream *outfile)
     infile->open(_filename, ios::in);
     if (!infile->is_open())
     {
-        cout << "error: can't open" << _filename << endl; 
+        cout << "error: can't open " << _filename << endl; 
         return (false);
     }
     out_filename = _filename + ".replace";
@@ -29,7 +29,7 @@ bool Replace::open_file(fstream *infile, fstream *outfile)
     if (!outfile->is_open())
     {
         infile->close();
-        cout << "error: can't open" << out_filename << endl; 
+        cout << "error: can't open " << out_filename << endl; 
         return (false);
     }
     return (true);
@@ -40,7 +40,6 @@ int Replace::replace(string s1, string s2)
     fstream infile;
     fstream outfile;
     size_t  s1_len = s1.length();
-    //size_t  s2_len = s2.length();
     size_t  buf_len;
     size_t  old_pos = 0;
     size_t  pos = 0;
@@ -60,16 +59,20 @@ int Replace::replace(string s1, string s2)
             buf_len = buf.length();
             while (pos < buf_len)
             {
+                old_pos = pos;
                 pos = buf.find(s1, pos);
                 if (pos == string::npos)
                 {
-                    outfile << buf.substr(0, string::npos);
+                    outfile << buf.substr(old_pos, string::npos);
+                    cout << "break;" << endl;
                     break;
                 }
-                outfile << buf.substr(0, pos);
+                cout << "old_pos:" << old_pos << ", pos:" << pos << endl;
+                outfile << buf.substr(old_pos, pos - old_pos);
+                cout << "pos1:" << pos << ", substr:" << buf.substr(old_pos, pos) << endl;
                 outfile << s2;
-                old_pos = pos;
                 pos += s1_len;
+                cout << "pos2:" << pos << ", old_pos:" << old_pos << endl;
             }
         }
         if (!infile.eof())
