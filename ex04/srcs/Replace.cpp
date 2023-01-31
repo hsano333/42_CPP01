@@ -67,12 +67,9 @@ int Replace::replace(string s1, string s2)
                     cout << "break;" << endl;
                     break;
                 }
-                cout << "old_pos:" << old_pos << ", pos:" << pos << endl;
                 outfile << buf.substr(old_pos, pos - old_pos);
-                cout << "pos1:" << pos << ", substr:" << buf.substr(old_pos, pos) << endl;
                 outfile << s2;
                 pos += s1_len;
-                cout << "pos2:" << pos << ", old_pos:" << old_pos << endl;
             }
         }
         if (!infile.eof())
