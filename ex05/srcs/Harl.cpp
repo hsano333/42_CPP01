@@ -40,45 +40,29 @@ void Harl::error(void)
     cout << endl;
 }
 
-HarlE Harl::getID(string level)
+void * Harl::getFunc(string level)
 {
-    HarlE id = NONE;
     const s_dict table[] =
     {
-        {"DEBUG", DEBUG},
-        {"INFO", INFO},
-        {"WARNING", WARNING},
-        {"ERROR", ERROR},
+        {"DEBUG", this->debug},
+        {"INFO", this->info},
+        {"WARNING", this->warning},
+        {"ERROR", this->error},
     };
 
     for (int i = 0; i < (int)NONE; i++)
     {
         while (level == string(table[i].key))
         {
-            id = table[i].value;
-            break;
+            return (void *)(table[i].func);
         }
     }
-    return (id);
+    return (NULL);
 }
 
 void Harl::complain(string level)
 {
-    switch (getID(level))
-    {
-        case DEBUG:
-            this->debug();
-            break;
-        case INFO:
-            this->info();
-            break;
-        case WARNING:
-            this->warning();
-            break;
-        case ERROR:
-            this->error();
-            break;
-        case NONE:
-            break;
-    }
+    typedef void (*func)(void);
+    func exe = (func)getFunc(level);
+    exe();
 }

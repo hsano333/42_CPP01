@@ -16,23 +16,20 @@ typedef enum Harl_E HarlE;
 typedef struct dict
 {
     string key;
-    HarlE  value;
+    void (*func)(void);
 }   s_dict;
 
 
 class Harl
 {
-    private:
-        void debug(void);
-        void info(void);
-        void warning(void);
-        void error(void);
-        HarlE getID(string level);
-
-        //s_dict table;
     public:
         Harl();
+        typedef void (*func)();
         void complain(string level);
+    private:
+        static void debug(void);
+        static void info(void);
+        static void warning(void);
+        static void error(void);
+        void* getFunc(string level);
 };
-
-
