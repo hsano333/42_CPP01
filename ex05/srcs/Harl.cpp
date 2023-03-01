@@ -52,10 +52,8 @@ void * Harl::getFunc(string level)
 
     for (int i = 0; i < (int)NONE; i++)
     {
-        while (level == string(table[i].key))
-        {
+        if (level == string(table[i].key))
             return (void *)(table[i].func);
-        }
     }
     return (NULL);
 }
@@ -64,5 +62,6 @@ void Harl::complain(string level)
 {
     typedef void (*func)(void);
     func exe = (func)getFunc(level);
-    exe();
+    if (exe != NULL)
+        exe();
 }
