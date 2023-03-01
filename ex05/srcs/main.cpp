@@ -1,4 +1,5 @@
 #include "Harl.hpp"
+#include <iostream>
 
 int main(int argc, char **argv)
 {
@@ -10,6 +11,6 @@ int main(int argc, char **argv)
     }
     else 
     {
-        cout << "" << endl;
+        std::cout << "Invalid argument: input only [DEBUG],[INFO],[WARNING], or [ERROR]" << std::endl;
     }
 }

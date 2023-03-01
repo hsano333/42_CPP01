@@ -64,4 +64,6 @@ void Harl::complain(string level)
     func exe = (func)getFunc(level);
     if (exe != NULL)
         exe();
+    else
+        cout << "[ Probably complaining about insignificant problems ]" << endl;
 }

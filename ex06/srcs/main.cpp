@@ -11,6 +11,6 @@ int main(int argc, char **argv)
     }
     else
     {
-        std::cout << "Invalid argument: input [DEBUG],[INFO],[WARNING], or [ERROR]" << std::endl;
+        std::cout << "Invalid argument: input only [DEBUG],[INFO],[WARNING], or [ERROR]" << std::endl;
     }
 }
