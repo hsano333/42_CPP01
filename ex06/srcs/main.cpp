@@ -1,4 +1,5 @@
 #include "Harl.hpp"
+#include <iostream>
 
 int main(int argc, char **argv)
 {
@@ -8,11 +9,8 @@ int main(int argc, char **argv)
     {
         harl.complain(string(argv[1]));
     }
-    else if (argc == 1)
+    else
     {
-        harl.complain("DEBUG");
-        harl.complain("INFO");
-        harl.complain("WARNING");
-        harl.complain("ERROR");
+        std::cout << "Invalid argument: input [DEBUG],[INFO],[WARNING], or [ERROR]" << std::endl;
     }
 }
