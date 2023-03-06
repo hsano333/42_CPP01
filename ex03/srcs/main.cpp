@@ -2,6 +2,13 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
+/*
+#include <stdio.h>
+__attribute__((destructor)) void f(void){
+    system("leaks Unnecessary_violence");
+}
+*/
+
 int main(void)
 {
 
@@ -22,5 +29,14 @@ int main(void)
         club.setType("some other type of club");
         jim.attack();
     }
-    system("leaks Unnecessary_violence");
+    {
+        Weapon *club = new Weapon("Test Weapon");
+        HumanB jim("Jim");
+        jim.attack();
+        jim.setWeapon(*club);
+        jim.attack();
+        club->setType("some other type of club");
+        jim.attack();
+        delete club;
+    }
 }

@@ -22,6 +22,11 @@ void HumanB::setWeapon(Weapon &weapon)
 
 void HumanB::attack(void)
 {
+    if (this->weapon == NULL)
+    {
+        cout << this->name << "has no Weapon" << endl; 
+        return ;
+    }
     cout << this->weapon->getType();
     cout << " attacks with their ";
     cout << this->name;
