@@ -1,5 +1,5 @@
 #ifndef HUMANB_H
-#define ifndef HUMANB_H
+#define HUMANB_H
 #include <Weapon.hpp>
 #include <string>
 

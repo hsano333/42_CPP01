@@ -1,5 +1,11 @@
 #include "Zombie.hpp"
 
+/*
+#include <stdio.h>
+__attribute__((destructor)) void f(void){
+    system("leaks BraiiiiiiinnnzzzZ");
+}
+*/
 int main(void)
 {
 	Zombie zombie("test static");
